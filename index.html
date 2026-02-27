@@ -879,7 +879,7 @@
 
   function goToSales(profileName) {
     var slug = profileName.toLowerCase().split(' + ')[0].trim().split(' ').join('-');
-    window.location.href = 'blueprint.html?hormone_profile=' + encodeURIComponent(slug);
+    window.location.href = 'blueprint.html?profile=' + encodeURIComponent(slug);
   }
 
   function startQuiz() {
@@ -1019,7 +1019,7 @@
         <p class="cta-eyebrow">Ready to go deeper?</p>
         <h3 class="cta-title">Get your full<br><em>${profile.name}</em> plan</h3>
         <p class="cta-subtitle">The quick wins above are just the start. Your full protocol covers exactly what to eat, what to avoid, and which supplements actually move the needle for your specific profile.</p>
-        <button class="btn-primary" onclick="goToSales(profile.name)">Get The Full Protocol →</button>
+        <button class="btn-primary" onclick="goToSales('${profile.name}')">Get The Full Protocol →</button>
       </div>
     `;
 
