@@ -1014,7 +1014,7 @@
         <p class="cta-eyebrow">Ready to go deeper?</p>
         <h3 class="cta-title">Get your full<br><em>${profile.name}</em> plan</h3>
         <p class="cta-subtitle">The quick wins above are just the start. Your full protocol covers exactly what to eat, what to avoid, and which supplements actually move the needle for your specific profile.</p>
-        <button class="btn-primary" onclick="alert('Link your offer page here')">Get The Full Protocol →</button>
+        <button class="btn-primary" onclick="window.location.href='blueprint.html?profile=' + encodeURIComponent(profile.name.toLowerCase().replace(/ /g, '-').replace(/\+/g, '-').replace(/--+/g, '-'))">Get The Full Protocol →</button>
       </div>
     `;
 
