@@ -960,6 +960,27 @@
       wins = [profiles[keys[0]].wins[0], profiles[keys[1]].wins[0], profiles[keys[0]].wins[1]];
     }
 
+    // Send to Make webhook
+    const payload = new URLSearchParams({
+      first_name: first,
+      email: email,
+      hormone_profile: profile.name,
+      key_symptoms: symptoms.join(', '),
+      quick_wins: wins.map(w => w.title).join(', '),
+      q1_symptoms: (answers.q1 || []).join(', '),
+      q2_cycle: (answers.q2 || []).join(', '),
+      q3_energy: (answers.q3 || []).join(', '),
+      q4_weight: (answers.q4 || []).join(', '),
+      q5_food_stress: (answers.q5 || []).join(', ')
+    });
+
+    fetch('https://hook.eu2.make.com/mdpno1lb07ah7igen96m93dla6jmqj3b', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: payload.toString()
+    }).catch(err => console.log('Webhook error:', err));
+
     const greeting = first ? `${first}, you're ` : "You're ";
 
     const html = `
