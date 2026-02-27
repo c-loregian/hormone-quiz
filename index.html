@@ -881,6 +881,8 @@
     var slug = profileName.toLowerCase().split(' + ')[0].trim().split(' ').join('-');
     window.location.href = 'blueprint.html?profile=' + encodeURIComponent(slug);
   }
+
+  function startQuiz() {
     showScreen('quiz');
     updateProgress(1);
   }
