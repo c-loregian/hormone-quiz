@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hormone Balancing Blueprint | Jenni Mae</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6F0;
+    --blush: #E8C4B8;
+    --rose: #C4806A;
+    --deep-rose: #8B4A3A;
+    --sage: #8A9E8C;
+    --text: #2C1810;
+    --text-light: #6B4C42;
+    --border: #E5D5CC;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 10% 5%, rgba(232,196,184,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 90% 95%, rgba(138,158,140,0.2) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 72px 0 60px;
+    text-align: center;
+  }
+
+  .brand {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 40px;
+    display: block;
+  }
+
+  .profile-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(232,196,184,0.25);
+    border: 1px solid var(--blush);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 7vw, 58px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--blush);
+    margin: 0 auto 32px;
+  }
+
+  .hero-intro {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-light);
+    max-width: 560px;
+    margin: 0 auto 48px;
+  }
+
+  .hero-intro strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── CTA BLOCK ── */
+  .cta-block {
+    background: linear-gradient(135deg, rgba(139,74,58,0.07) 0%, rgba(232,196,184,0.18) 100%);
+    border: 1px solid var(--blush);
+    border-radius: 16px;
+    padding: 40px 36px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .price-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .price {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .price-note {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-bottom: 28px;
+  }
+
+  .btn-buy {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 16px;
+    padding: 20px 32px;
+    background: var(--deep-rose);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .btn-buy:hover {
+    background: var(--rose);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(139,74,58,0.3);
+  }
+
+  .secure-note {
+    font-size: 12px;
+    color: var(--text-light);
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 56px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .section-body {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 20px;
+  }
+
+  .section-body strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── PROBLEM PILLS ── */
+  .problem-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 28px 0;
+  }
+
+  .problem-pill {
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 14px;
+    color: var(--text-light);
+  }
+
+  .problem-pill.active {
+    background: rgba(232,196,184,0.25);
+    border-color: var(--blush);
+    color: var(--deep-rose);
+    font-weight: 500;
+  }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .inside-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.2s ease;
+  }
+
+  .inside-item:hover { border-color: var(--blush); }
+
+  .inside-icon {
+    font-size: 22px;
+    line-height: 1;
+    min-width: 28px;
+    margin-top: 2px;
+  }
+
+  .inside-content h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .inside-content p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-light);
+  }
+
+  /* ── ABOUT ── */
+  .about-block {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  .about-initials {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blush), var(--rose));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: white;
+  }
+
+  /* ── WHAT YOU GET HIGHLIGHTED ── */
+  .highlight-box {
+    background: rgba(255,255,255,0.8);
+    border: 1.5px solid var(--blush);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 32px 0;
+  }
+
+  .highlight-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .highlight-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-light);
+  }
+
+  .highlight-list li::before {
+    content: '✦';
+    color: var(--rose);
+    font-size: 10px;
+    margin-top: 4px;
+    min-width: 12px;
+  }
+
+  /* ── URGENCY ── */
+  .urgency-bar {
+    background: var(--deep-rose);
+    color: white;
+    text-align: center;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  footer p {
+    font-size: 12px;
+    color: var(--text-light);
+    opacity: 0.5;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in:nth-child(2) { animation-delay: 0.1s; }
+  .fade-in:nth-child(3) { animation-delay: 0.2s; }
+  .fade-in:nth-child(4) { animation-delay: 0.3s; }
+
+  @media (max-width: 520px) {
+    .cta-block { padding: 28px 20px; }
+    .about-block { flex-direction: column; }
+    .price { font-size: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero fade-in">
+    <span class="brand">Jenni Mae Wellness</span>
+    <div class="profile-badge" id="profile-badge">✦ <span id="badge-text">Your Hormone Profile</span></div>
+    <p class="hero-eyebrow">The Hormone Balancing Blueprint</p>
+    <h1 class="hero-title" id="hero-title">Finally fix what's<br><em>actually wrong</em></h1>
+    <p class="hero-subtitle" id="hero-subtitle">The complete protocol for your hormone type</p>
+    <div class="divider"></div>
+    <p class="hero-intro" id="hero-intro">Loading your personalised results...</p>
+  </div>
+
+  <!-- CTA TOP -->
+  <div class="cta-block fade-in">
+    <div class="price-line">
+      <span class="price">$9.99</span>
+    </div>
+    <p class="price-note">One-time payment · Instant digital download</p>
+    <a href="https://buy.stripe.com/dRm9AScrOgxh9Yf56X2cg06" class="btn-buy" id="cta-btn-top">Get The Hormone Balancing Blueprint →</a>
+    <p class="secure-note">🔒 Secure checkout via Stripe</p>
+  </div>
+
+  <!-- PROBLEM SECTION -->
+  <section>
+    <p class="section-label">Why nothing has worked</p>
+    <h2 class="section-title" id="problem-title">You've been treating<br>the <em>symptoms, not the source</em></h2>
+    <p class="section-body" id="problem-body"></p>
+    <div class="problem-grid" id="problem-grid"></div>
+    <p class="section-body" id="problem-body2"></p>
+  </section>
+
+  <!-- DISCOVERY SECTION -->
+  <section>
+    <p class="section-label">The discovery</p>
+    <h2 class="section-title">How Jenni fixed her hormones<br>when doctors <em>couldn't help</em></h2>
+    <p class="section-body">Jenni spent years suffering with heavy periods, debilitating PMS, chest pains, heart palpitations, and anxiety — all dismissed by her GP as "just her period." She was offered the pill six times. She refused six times.</p>
+    <p class="section-body">So she did what no one else would do for her. She spent years researching, reading, and testing everything she could find about the female body, hormones, and the menstrual cycle. She changed what she ate, how she moved, and how she lived. <strong>Her cycles became regular. Her PMS disappeared. She felt like herself again.</strong></p>
+    <p class="section-body">She documented everything she learned into the Hormone Balancing Blueprint — a complete guide built specifically for women, around women's biology, using evidence-based protocols that actually address root causes rather than masking symptoms.</p>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section>
+    <p class="section-label">What's inside</p>
+    <h2 class="section-title">Everything you need.<br><em>Nothing you don't.</em></h2>
+    <p class="section-body">The Blueprint covers your entire hormonal system — not just one piece of it. Because fixing your hormones isn't about one supplement or one diet rule. It's about understanding the full picture and knowing exactly what your body needs.</p>
+    <div class="inside-grid" id="inside-grid"></div>
+  </section>
+
+  <!-- PROFILE-SPECIFIC SECTION -->
+  <section>
+    <p class="section-label" id="specific-label">Your specific protocol</p>
+    <h2 class="section-title" id="specific-title">What the Blueprint covers<br>for <em id="specific-profile-name">your profile</em></h2>
+    <p class="section-body" id="specific-body"></p>
+    <div class="highlight-box">
+      <ul class="highlight-list" id="specific-list"></ul>
+    </div>
+    <p class="section-body" id="specific-body2"></p>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <p class="section-label">About Jenni Mae</p>
+    <div class="about-block">
+      <div class="about-initials">J</div>
+      <div>
+        <h2 class="section-title" style="font-size:clamp(24px,4vw,32px); margin-bottom:16px;">Not a doctor.<br><em>Better than that.</em></h2>
+        <p class="section-body">Jenni Mae is 26, currently halfway through her hormone health certification to become a qualified women's health practitioner. But more importantly, she's lived everything in this guide. She's the woman who was dismissed by her GP six times, who figured it out on her own, and who refuses to let other women go through the same thing.</p>
+        <p class="section-body">"I'm sick and tired of women not knowing enough about their own bodies. For too long we've felt confused, misunderstood, and undermined when it comes to our pain. That ends here."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="border-top: none; padding-top: 0;">
+    <div class="urgency-bar">The information in this guide took years to find. You can have it in the next 60 seconds.</div>
+    <div class="cta-block">
+      <p class="section-label" style="text-align:center;">One decision. One download. One starting point.</p>
+      <h2 class="section-title" style="text-align:center; margin-bottom:8px;">The Hormone Balancing<br><em>Blueprint</em></h2>
+      <p class="price-note" style="margin-bottom:4px; font-size:15px; color:var(--text);">Everything you need to understand and fix your hormones.</p>
+      <p class="price-note" style="margin-bottom:28px;">Built for your profile. Backed by science. Written like a friend.</p>
+      <div class="price-line"><span class="price">$9.99</span></div>
+      <p class="price-note">One-time payment · Instant digital download</p>
+      <a href="https://buy.stripe.com/dRm9AScrOgxh9Yf56X2cg06" class="btn-buy" id="cta-btn-bottom">Get Instant Access →</a>
+      <p class="secure-note">🔒 Secure checkout via Stripe · No subscription</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Jenni Mae Wellness · All rights reserved</p>
+  </footer>
+
+</div>
+
+<script>
+  const profiles = {
+    'oestrogen-dominant': {
+      badge: 'Oestrogen Dominant',
+      heroTitle: 'Your oestrogen is running<br><em>the whole show</em>',
+      heroSubtitle: 'And it\'s behind the bloating, the acne, the heavy periods, and the weight that won\'t shift',
+      heroIntro: 'You now know your root cause — <strong>oestrogen dominance</strong>. Your body is producing more oestrogen than it can properly clear, and until that changes, the symptoms you\'re dealing with will keep coming back no matter what skincare you use, what diet you try, or how hard you train. The Hormone Balancing Blueprint gives you the exact protocol to fix this.',
+      problemTitle: 'You\'ve been treating the<br><em>symptoms, not the source</em>',
+      problemBody: 'Hormonal acne cream. Period pain tablets. Cutting calories. You\'ve probably tried all of it. And it works — until it doesn\'t. Because none of those things address why your oestrogen is elevated in the first place.',
+      problemPills: ['Hormonal acne', 'Bloating', 'Heavy periods', 'Hip & thigh weight gain', 'Breast tenderness', 'PMS mood swings', 'Difficulty losing weight'],
+      problemBody2: 'Oestrogen dominance happens when your body can\'t clear used oestrogen efficiently — often because your liver and gut aren\'t getting the support they need. The Blueprint shows you exactly how to fix that.',
+      specificTitle: 'What the Blueprint covers for',
+      specificBody: 'Oestrogen dominance has a very specific solution set — and it goes far beyond "eat more vegetables." The Blueprint walks you through the exact foods, nutrients, and daily habits that help your liver and gut clear excess oestrogen, shift your hormone metabolism toward the safer pathway, and bring progesterone back into balance.',
+      specificList: [
+        'The DIM protocol — why cruciferous vegetables are your most powerful daily tool and exactly how much you need',
+        'The fibre-oestrogen connection — how 30g of fibre a day actively removes excess oestrogen from your body (and why most women aren\'t close to hitting this)',
+        'Phase 2 liver detox support — the specific nutrients that help your liver package up and eliminate used hormones',
+        'The xenoestrogen problem — what\'s silently adding to your oestrogen load every day and how to reduce it',
+        'Anti-inflammatory eating — the omega-3 to omega-6 ratio that directly impacts your period pain and PMS severity',
+        'Cycle syncing — how to adjust your nutrition and training across all four phases to work with your hormones, not against them'
+      ],
+      specificBody2: 'Every meal idea, supplement recommendation, and daily habit in the Blueprint has been designed to support exactly this profile. Nothing generic. Nothing that doesn\'t move the needle for you specifically.'
+    },
+    'cortisol-overloaded': {
+      badge: 'Cortisol Overloaded',
+      heroTitle: 'Your stress hormones are<br><em>hijacking everything</em>',
+      heroSubtitle: 'The belly weight, the wired-but-exhausted feeling, the irregular periods — cortisol is behind all of it',
+      heroIntro: 'You now know your root cause — <strong>cortisol overload</strong>. When your stress hormones stay elevated for too long, they suppress your reproductive hormones, wreck your sleep, and make your body hold onto fat as a survival mechanism. The Hormone Balancing Blueprint gives you the exact protocol to break this cycle.',
+      problemTitle: 'Working harder is making<br><em>everything worse</em>',
+      problemBody: 'More HIIT. Less food. More caffeine to push through. If this sounds familiar, you\'re not broken — you\'re just running a strategy that works for men\'s hormones, not yours. Every one of those things spikes cortisol further.',
+      problemPills: ['Belly fat that won\'t move', 'Wired but exhausted', 'Irregular periods', 'Puffy face', 'Anxiety', 'Late-night second wind', 'Caffeine dependency'],
+      problemBody2: 'High cortisol tells your body it\'s in danger — so it holds onto fat, suppresses ovulation, and keeps you in a state of chronic low-grade stress. The fix isn\'t more willpower. It\'s understanding what your body actually needs.',
+      specificTitle: 'What the Blueprint covers for',
+      specificBody: 'Cortisol overload requires a completely different approach to training, eating, and recovery than most fitness advice ever acknowledges. The Blueprint gives you the evidence-based tools to bring your stress hormones down — and explains exactly why your current approach might be making things worse.',
+      specificList: [
+        'The cortisol-caffeine loop — why your morning coffee habit is spiking your stress hormones before the day even starts, and the simple fix',
+        'Why HIIT is working against you — what to train instead and how to structure your week for hormonal recovery',
+        'The under-eating trap — how eating too little keeps cortisol elevated and locks fat in place, even when you\'re in a deficit',
+        'Blood sugar and cortisol — the direct connection between unstable blood sugar and chronically high stress hormones',
+        'Supplement support for adrenal recovery — the specific nutrients that help your adrenals regulate cortisol production',
+        'Cycle syncing — how to structure your training intensity across the month so you stop fighting your biology and start working with it'
+      ],
+      specificBody2: 'Jenni spent years overtraining and under-eating before she understood this. The weight dropped off when she finally stopped. The Blueprint gives you the exact roadmap she used.'
+    },
+    'blood-sugar-unstable': {
+      badge: 'Blood Sugar Unstable',
+      heroTitle: 'Your blood sugar is crashing<br><em>your hormones with it</em>',
+      heroSubtitle: 'The cravings, the energy crashes, the mood swings, the weight that won\'t stabilise — this is the root cause',
+      heroIntro: 'You now know your root cause — <strong>blood sugar instability</strong>. Every spike and crash is sending a ripple through your entire hormonal system — affecting insulin, cortisol, and your reproductive hormones. The Hormone Balancing Blueprint gives you the exact protocol to stabilise this and restore balance from the ground up.',
+      problemTitle: 'It\'s not your willpower.<br><em>It\'s your blood sugar.</em>',
+      problemBody: 'The cravings aren\'t weakness. The afternoon crash isn\'t laziness. When your blood sugar spikes and crashes repeatedly throughout the day, your body is doing exactly what it\'s designed to do — and it\'s pulling your hormones in every direction with it.',
+      problemPills: ['Energy crashes after meals', 'Intense sugar cravings', 'Afternoon brain fog', 'Weight fluctuations', 'Mood swings', 'Feeling shaky when hungry', 'Can\'t lose weight consistently'],
+      problemBody2: 'Unstable blood sugar drives up insulin — and high insulin directly disrupts ovulation, increases androgen production, and drives inflammation. Stabilise this one thing and your hormones have a real chance to rebalance.',
+      specificTitle: 'What the Blueprint covers for',
+      specificBody: 'Blood sugar stability is one of the most powerful levers you have for hormonal health — and most women have never been taught how to use it. The Blueprint gives you the complete framework: what to eat, when to eat it, and exactly how food combinations affect your glucose and your hormones.',
+      specificList: [
+        'The protein-first rule — why leading every meal with protein is the single most powerful blood sugar tool available and how to build this habit',
+        'Pairing principles — the exact food combinations that prevent insulin spikes and keep you satisfied for hours',
+        'The breakfast window — why eating within 30-60 minutes of waking sets your blood sugar baseline for the entire day',
+        'Post-meal movement — the 10-minute habit that\'s clinically shown to reduce blood sugar spikes by up to 30%',
+        'The luteal phase craving trap — why cravings get worse in the week before your period and the slow-releasing carb strategy to manage them',
+        'Berberine and blood sugar supplements — what the evidence actually says and whether it\'s right for your profile'
+      ],
+      specificBody2: 'Once your blood sugar stabilises, the cravings quieten, the energy evens out, and your hormones finally have the stable foundation they need to function properly.'
+    },
+    'under-fuelled': {
+      badge: 'Under-Fuelled',
+      heroTitle: 'Your body is running<br><em>on empty</em>',
+      heroSubtitle: 'The fatigue, the missing periods, the hair thinning, the inability to build anything — your hormones have gone quiet',
+      heroIntro: 'You now know your root cause — your body is <strong>under-fuelled</strong>. Years of not eating enough, overtraining, or chronic stress have put your hormones into conservation mode. Your body isn\'t failing you. It\'s protecting you. The Hormone Balancing Blueprint gives you the exact protocol to rebuild from the ground up.',
+      problemTitle: 'Eating less and training more<br><em>is the problem, not the solution</em>',
+      problemBody: 'This is the hardest thing to hear — but the approach you\'ve probably been told to follow is the very thing keeping you stuck. When your body doesn\'t feel safe, it shuts down non-essential functions. Reproduction is the first to go. Then your metabolism. Then your thyroid.',
+      problemPills: ['All-day fatigue', 'Hair thinning', 'Light or missing periods', 'Feeling cold', 'Low appetite', 'Can\'t build muscle', 'Burnt out feeling'],
+      problemBody2: 'The fitness industry has spent decades telling women to eat less and move more. But that advice doesn\'t account for women\'s biology. Jenni was doing 6 intense training sessions a week on 1-2 meals a day — and holding more fat than when she started. The moment she ate more, everything changed.',
+      specificTitle: 'What the Blueprint covers for',
+      specificBody: 'Recovery from under-fuelling isn\'t just about eating more — it\'s about understanding what your body specifically needs to feel safe enough to produce hormones again. The Blueprint walks you through the exact nutritional and lifestyle framework to rebuild your hormonal foundation.',
+      specificList: [
+        'How much you actually need to eat — the basal metabolic rate reality that most women have never been told, and why eating below it keeps fat locked in place',
+        'The nutrient deficiencies most common in your profile — iron, ferritin, zinc, and B vitamins, and why standard blood tests often miss them',
+        'Why HIIT is the worst thing for your body right now — the training approach that supports recovery instead of compounding the damage',
+        'Breakfast as medicine — why eating within 30-60 minutes of waking is non-negotiable for your profile and what the optimal breakfast looks like',
+        'Protein, fat, and complex carbs — the full-meal framework that signals safety to your nervous system and restarts hormone production',
+        'Supplement support for recovery — magnesium, omega-3, vitamin D3 with K2, and the bone broth protein protocol that supports adrenal recovery'
+      ],
+      specificBody2: 'Jenni\'s own transformation came from finally eating enough. The Blueprint gives you the exact roadmap — not a calorie counter, not a restriction plan, but a genuine nourishment framework that works with your body\'s biology.'
+    }
+  };
+
+  const insideItems = [
+    { icon: '🧬', title: 'The complete hormone education', body: 'Finally understand what your hormones actually do, why they go out of balance, and how they interact as a system — not just individual labels.' },
+    { icon: '🔥', title: 'The anti-inflammatory nutrition framework', body: 'The omega-3 protocol, fibre targets, and whole food approach that reduces the systemic inflammation driving your symptoms.' },
+    { icon: '🌿', title: 'The cruciferous vegetable protocol', body: 'Why DIM from cruciferous vegetables is your most powerful daily tool for oestrogen metabolism — and exactly how to use it.' },
+    { icon: '📊', title: 'Cycle syncing guide', body: 'How to adjust your nutrition and training across all four hormonal phases so you stop fighting your biology and start working with it.' },
+    { icon: '💊', title: 'Evidence-based supplement guide', body: 'Omega-3, magnesium bisglycinate, vitamin D3/K2, berberine, myo-inositol — what each one does, who needs it, and how to take it.' },
+    { icon: '🍽️', title: '30+ hormone-balancing meal ideas', body: 'Breakfasts, lunches, snacks and batch-cook recipes built around anti-inflammatory, hormone-supporting whole foods. With full macros.' },
+    { icon: '⚖️', title: 'The weight loss truth for women', body: 'Why eating less and training more backfires — and the exact approach that lets your body finally release stored fat safely.' },
+    { icon: '✨', title: 'Hormonal acne protocol', body: 'Why acne is a hormonal signal, not a skincare issue — and the internal approach (plus skincare recommendations) that actually works.' }
+  ];
+
+  function getProfile() {
+    const params = new URLSearchParams(window.location.search);
+    const p = (params.get('profile') || '').toLowerCase().replace(/ /g, '-');
+    const map = {
+      'oestrogen-dominant': 'oestrogen-dominant',
+      'oestrogen dominant': 'oestrogen-dominant',
+      'cortisol-overloaded': 'cortisol-overloaded',
+      'cortisol overloaded': 'cortisol-overloaded',
+      'blood-sugar-unstable': 'blood-sugar-unstable',
+      'blood sugar unstable': 'blood-sugar-unstable',
+      'under-fuelled': 'under-fuelled',
+      'under-fueled': 'under-fuelled',
+      'under fuelled': 'under-fuelled'
+    };
+    return map[p] || null;
+  }
+
+  function render() {
+    const key = getProfile();
+    const p = key ? profiles[key] : null;
+
+    // Render inside grid (same for all)
+    document.getElementById('inside-grid').innerHTML = insideItems.map(item => `
+      <div class="inside-item">
+        <span class="inside-icon">${item.icon}</span>
+        <div class="inside-content">
+          <h4>${item.title}</h4>
+          <p>${item.body}</p>
+        </div>
+      </div>
+    `).join('');
+
+    if (!p) {
+      // Generic fallback if no profile param
+      document.getElementById('badge-text').textContent = 'Your Hormone Profile';
+      document.getElementById('hero-title').innerHTML = 'Fix your hormones.<br><em>For good.</em>';
+      document.getElementById('hero-subtitle').textContent = 'The complete blueprint for women who are done guessing';
+      document.getElementById('hero-intro').innerHTML = 'The Hormone Balancing Blueprint is a complete, evidence-based guide to understanding and fixing your hormonal health — built specifically for women, around women\'s biology.';
+      document.getElementById('problem-title').innerHTML = 'You\'ve been treating the<br><em>symptoms, not the source</em>';
+      document.getElementById('problem-body').textContent = 'Skincare for acne. Pain relief for periods. Calorie cutting for weight. None of it works long-term because none of it addresses why your hormones are imbalanced in the first place.';
+      document.getElementById('problem-grid').innerHTML = ['Hormonal acne', 'Heavy periods', 'Irregular cycles', 'Fatigue', 'Weight gain', 'Bloating', 'Mood swings', 'Brain fog'].map(s => `<span class="problem-pill">${s}</span>`).join('');
+      document.getElementById('problem-body2').textContent = 'The Blueprint gives you the root cause framework — so you understand what\'s actually happening and exactly what to do about it.';
+      document.getElementById('specific-label').textContent = 'The complete system';
+      document.getElementById('specific-title').innerHTML = 'Everything works <em>together</em>';
+      document.getElementById('specific-profile-name').textContent = '';
+      document.getElementById('specific-body').textContent = 'Hormones don\'t work in isolation. When one is off, it affects everything else. The Blueprint gives you the full picture — nutrition, movement, supplementation, cycle syncing — so every change you make compounds on the last.';
+      document.getElementById('specific-list').innerHTML = ['Understand the hormonal cascade and why one imbalance affects everything', 'Know exactly what to eat to reduce inflammation and support hormone production', 'Use your cycle as a tool — not something that happens to you', 'Clear the root causes of hormonal acne from the inside out', 'Stop the under-eating and over-training cycle that keeps women stuck', 'Build a supplement stack that actually supports your specific needs'].map(s => `<li>${s}</li>`).join('');
+      document.getElementById('specific-body2').textContent = '';
+      return;
+    }
+
+    document.getElementById('badge-text').textContent = p.badge;
+    document.getElementById('hero-title').innerHTML = p.heroTitle;
+    document.getElementById('hero-subtitle').textContent = p.heroSubtitle;
+    document.getElementById('hero-intro').innerHTML = p.heroIntro;
+    document.getElementById('problem-title').innerHTML = p.problemTitle;
+    document.getElementById('problem-body').textContent = p.problemBody;
+    document.getElementById('problem-grid').innerHTML = p.problemPills.map((s, i) =>
+      `<span class="problem-pill ${i < 3 ? 'active' : ''}">${s}</span>`
+    ).join('');
+    document.getElementById('problem-body2').textContent = p.problemBody2;
+    document.getElementById('specific-profile-name').textContent = p.badge;
+    document.getElementById('specific-body').textContent = p.specificBody;
+    document.getElementById('specific-list').innerHTML = p.specificList.map(s => `<li>${s}</li>`).join('');
+    document.getElementById('specific-body2').textContent = p.specificBody2;
+  }
+
+  render();
+</script>
+</body>
+</html>

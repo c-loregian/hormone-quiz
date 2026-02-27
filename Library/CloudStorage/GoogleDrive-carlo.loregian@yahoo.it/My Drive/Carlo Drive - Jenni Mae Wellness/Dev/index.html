@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Hormone Check | Jenni Mae Wellness</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6F0;
+    --warm-white: #FDF9F5;
+    --blush: #E8C4B8;
+    --rose: #C4806A;
+    --deep-rose: #8B4A3A;
+    --sage: #8A9E8C;
+    --text: #2C1810;
+    --text-light: #6B4C42;
+    --border: #E5D5CC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(232,196,184,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 90%, rgba(138,158,140,0.15) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* SCREENS */
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* INTRO SCREEN */
+  #intro {
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0;
+  }
+  #intro.active { display: flex; }
+
+  .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .intro-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .intro-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 8vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .intro-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .intro-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--blush);
+    margin: 28px auto;
+  }
+
+  .intro-description {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-light);
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto 40px;
+  }
+
+  .intro-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 44px;
+  }
+
+  .pill {
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--text-light);
+    background: rgba(255,255,255,0.5);
+  }
+
+  .btn-primary {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    background: var(--deep-rose);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .btn-primary:hover {
+    background: var(--rose);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(139,74,58,0.25);
+  }
+
+  .intro-note {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 16px;
+    opacity: 0.7;
+  }
+
+  /* QUIZ SCREEN */
+  #quiz {
+    min-height: 100vh;
+    padding: 48px 0 80px;
+  }
+
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .progress-track {
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--rose);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: var(--text-light);
+    opacity: 0.7;
+  }
+
+  .question-block {
+    display: none;
+    animation: fadeUp 0.35s ease forwards;
+  }
+  .question-block.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .question-number {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 12px;
+  }
+
+  .question-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 5vw, 32px);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 32px;
+  }
+
+  .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .option {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .option-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.6);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  .option-label:hover {
+    border-color: var(--blush);
+    background: rgba(255,255,255,0.9);
+  }
+
+  .option input:checked + .option-label {
+    border-color: var(--rose);
+    background: rgba(232,196,184,0.2);
+  }
+
+  .option-dot {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 4px;
+    border: 1.5px solid var(--border);
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .option input:checked + .option-label .option-dot {
+    border-color: var(--rose);
+    background: var(--rose);
+  }
+
+  .option input:checked + .option-label .option-dot::after {
+    content: '';
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-1px);
+  }
+
+  .select-hint {
+    font-size: 12px;
+    color: var(--text-light);
+    opacity: 0.6;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .option-key {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--rose);
+    opacity: 0.6;
+    margin-top: 1px;
+    min-width: 12px;
+  }
+
+  .quiz-nav {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-back {
+    padding: 14px 24px;
+    background: transparent;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-back:hover { border-color: var(--rose); color: var(--rose); }
+
+  .btn-next {
+    flex: 1;
+    padding: 16px 32px;
+    background: var(--deep-rose);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-next:hover {
+    background: var(--rose);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(139,74,58,0.25);
+  }
+
+  .btn-next:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* EMAIL CAPTURE */
+  #email-capture {
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0;
+  }
+  #email-capture.active { display: flex; }
+
+  .email-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .email-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 7vw, 52px);
+    font-weight: 300;
+    line-height: 1.15;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .email-title em { font-style: italic; color: var(--rose); }
+
+  .email-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-light);
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto 40px;
+  }
+
+  .email-form {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.8);
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .input-field:focus { border-color: var(--rose); }
+  .input-field::placeholder { color: #B09080; }
+
+  .email-note {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    opacity: 0.6;
+    margin-top: 12px;
+  }
+
+  /* RESULT SCREEN */
+  #result {
+    min-height: 100vh;
+    padding: 60px 0 80px;
+    display: none;
+  }
+  #result.active { display: block; }
+
+  .result-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: rgba(232,196,184,0.3);
+    border: 1px solid var(--blush);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 24px;
+  }
+
+  .result-header {
+    margin-bottom: 40px;
+  }
+
+  .result-profile-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 7vw, 58px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .result-profile-name em { font-style: italic; color: var(--rose); }
+
+  .result-intro {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-light);
+    max-width: 540px;
+  }
+
+  .result-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0;
+  }
+
+  .result-section-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 20px;
+  }
+
+  .symptoms-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .symptom-tag {
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--text-light);
+  }
+
+  .quick-wins {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .win-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .win-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--blush);
+    line-height: 1;
+    min-width: 32px;
+  }
+
+  .win-content h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .win-content p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-light);
+  }
+
+  .result-cta-box {
+    background: linear-gradient(135deg, rgba(139,74,58,0.08) 0%, rgba(232,196,184,0.15) 100%);
+    border: 1px solid var(--blush);
+    border-radius: 12px;
+    padding: 36px;
+    text-align: center;
+  }
+
+  .cta-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 16px;
+  }
+
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .cta-title em { font-style: italic; color: var(--rose); }
+
+  .cta-subtitle {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 28px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .intro-pills { display: none; }
+    .result-cta-box { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- INTRO SCREEN -->
+<div id="intro" class="screen active">
+  <div class="container">
+    <div class="brand">Jenni Mae Wellness</div>
+    <p class="intro-eyebrow">Free Hormone Check</p>
+    <h1 class="intro-title">The 5-step hormone check every woman who struggles with <em>weight, acne or irregular periods</em> should take</h1>
+    <div class="intro-divider"></div>
+    <p class="intro-description">Answer 5 simple questions and get instant clarity on what's actually causing your hormonal chaos — plus the exact quick wins to start fixing it today.</p>
+    <div class="intro-pills">
+      <span class="pill">Weight management</span>
+      <span class="pill">Acne & skin</span>
+      <span class="pill">Irregular periods</span>
+      <span class="pill">Low energy</span>
+      <span class="pill">Mood swings</span>
+    </div>
+    <button class="btn-primary" onclick="startQuiz()">Start the Free Check →</button>
+    <p class="intro-note">Takes 60 seconds · No sign-up required to start</p>
+  </div>
+</div>
+
+<!-- QUIZ SCREEN -->
+<div id="quiz" class="screen">
+  <div class="container">
+    <div class="quiz-header">
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width:20%"></div>
+      </div>
+      <p class="progress-label" id="progress-label">Question 1 of 5</p>
+    </div>
+
+    <!-- Q1 -->
+    <div class="question-block active" id="q1">
+      <p class="question-number">Question 01</p>
+      <h2 class="question-text">What bothers you the most?</h2>
+      <p class="select-hint">Select all that apply</p>
+      <div class="options-grid">
+        <label class="option">
+          <input type="checkbox" name="q1" value="A">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">A</span>Bloating, breast tenderness, and skin that breaks out around my period</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q1" value="B">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">B</span>Puffy face, belly fat that won't budge, and feeling wired but exhausted</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q1" value="C">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">C</span>Constant hunger, energy crashes after eating, and sugar cravings I can't control</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q1" value="D">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">D</span>Flat energy all day, hair thinning, and feeling cold even when others aren't</span>
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-next" id="next1" onclick="nextQ(1)" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-block" id="q2">
+      <p class="question-number">Question 02</p>
+      <h2 class="question-text">How would you describe your period and the week before it?</h2>
+      <p class="select-hint">Select all that apply</p>
+      <div class="options-grid">
+        <label class="option">
+          <input type="checkbox" name="q2" value="A">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">A</span>Heavy, painful, and I get moody or emotional in the days leading up to it</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q2" value="B">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">B</span>Irregular or delayed — stress seems to make it worse or disappear entirely</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q2" value="C">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">C</span>Unpredictable timing, and I get intense cravings and mood swings beforehand</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q2" value="D">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">D</span>Light, irregular, or sometimes missing — my body just feels depleted</span>
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="prevQ(2)">← Back</button>
+        <button class="btn-next" id="next2" onclick="nextQ(2)" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-block" id="q3">
+      <p class="question-number">Question 03</p>
+      <h2 class="question-text">Which of these sounds most like your daily energy pattern?</h2>
+      <p class="select-hint">Select all that apply</p>
+      <div class="options-grid">
+        <label class="option">
+          <input type="checkbox" name="q3" value="A">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">A</span>I feel okay in the morning but get emotional, anxious or irritable as the day goes on</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q3" value="B">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">B</span>I wake up tired, get a second wind late at night, and feel "on edge" most of the day</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q3" value="C">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">C</span>I crash hard after meals and feel mentally foggy — especially in the afternoon</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q3" value="D">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">D</span>I'm tired from the moment I wake up and never really feel fully switched on</span>
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="prevQ(3)">← Back</button>
+        <button class="btn-next" id="next3" onclick="nextQ(3)" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-block" id="q4">
+      <p class="question-number">Question 04</p>
+      <h2 class="question-text">When it comes to your weight, which feels most true?</h2>
+      <p class="select-hint">Select all that apply</p>
+      <div class="options-grid">
+        <label class="option">
+          <input type="checkbox" name="q4" value="A">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">A</span>I gain weight easily around my hips and thighs and struggle to shift it no matter what I do</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q4" value="B">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">B</span>I carry weight around my stomach and it feels like stress makes it worse</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q4" value="C">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">C</span>My weight fluctuates a lot — I can be good all week and still feel puffy or heavy</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q4" value="D">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">D</span>I can't seem to gain or build anything — I feel soft, weak, or underweight</span>
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="prevQ(4)">← Back</button>
+        <button class="btn-next" id="next4" onclick="nextQ(4)" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question-block" id="q5">
+      <p class="question-number">Question 05</p>
+      <h2 class="question-text">Which of these best describes your relationship with food and stress?</h2>
+      <p class="select-hint">Select all that apply</p>
+      <div class="options-grid">
+        <label class="option">
+          <input type="checkbox" name="q5" value="A">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">A</span>I crave sweet or salty food before my period and feel emotionally triggered by stress</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q5" value="B">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">B</span>I run on caffeine, feel anxious without it, and reach for sugar or carbs when overwhelmed</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q5" value="C">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">C</span>I need something sweet after every meal and feel shaky or irritable if I go too long without eating</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q5" value="D">
+          <span class="option-label"><span class="option-dot"></span><span class="option-key">D</span>I don't have much of an appetite, skip meals without realising, and feel burnt out rather than stressed</span>
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="prevQ(5)">← Back</button>
+        <button class="btn-next" id="next5" onclick="goToEmail()" disabled>See My Results →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL CAPTURE SCREEN -->
+<div id="email-capture" class="screen">
+  <div class="container">
+    <p class="email-eyebrow">Almost there</p>
+    <h2 class="email-title">Your results are<br><em>ready.</em></h2>
+    <p class="email-subtitle">Enter your details below and we'll show you your hormone profile plus the exact steps to start fixing it today.</p>
+    <div class="email-form">
+      <div class="input-group">
+        <input type="text" class="input-field" id="firstName" placeholder="First name" />
+        <input type="email" class="input-field" id="emailAddress" placeholder="Email address" />
+      </div>
+      <button class="btn-primary" onclick="showResult()">Show My Results →</button>
+      <p class="email-note">No spam. Unsubscribe any time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RESULT SCREEN -->
+<div id="result" class="screen">
+  <div class="container">
+    <div id="result-content"></div>
+  </div>
+</div>
+
+<script>
+  const profiles = {
+    A: {
+      name: "Oestrogen Dominant",
+      intro: "Your body is producing too much oestrogen relative to progesterone. This creates a specific cascade of symptoms — and the good news is, once you know this is your root cause, the path forward becomes much clearer.",
+      symptoms: ["Bloating", "Breast tenderness", "Hormonal acne", "Heavy periods", "Mood swings", "Hip & thigh weight gain", "PMS cravings"],
+      wins: [
+        { title: "Support oestrogen clearance daily", body: "Your liver is the key player here. Focus on cruciferous vegetables (broccoli, cauliflower, kale) every day — they contain a compound called DIM that helps your body process and clear excess oestrogen." },
+        { title: "Reduce your toxic load", body: "Oestrogen dominance is often worsened by xenoestrogens — chemicals in plastics, conventional beauty products, and synthetic fragrances that mimic oestrogen in your body. Swap to glass, clean products, and unscented where possible." },
+        { title: "Prioritise progesterone-supporting habits", body: "Magnesium glycinate before bed, vitamin B6, and managing blood sugar all help your body produce more progesterone — the hormone that balances oestrogen's effects." }
+      ],
+      cta: "Get the full Oestrogen Dominant protocol"
+    },
+    B: {
+      name: "Cortisol Overloaded",
+      intro: "Your stress hormone is running the show — and it's dragging everything else down with it. High cortisol suppresses your reproductive hormones, wrecks your sleep cycle, and makes fat loss nearly impossible. This is fixable.",
+      symptoms: ["Belly weight gain", "Wired but exhausted", "Irregular periods", "Puffy face", "Anxiety", "Late-night energy spikes", "Caffeine dependency"],
+      wins: [
+        { title: "Break the cortisol-caffeine loop", body: "Caffeine on an empty stomach spikes cortisol immediately. Start your morning with protein and fat first — then coffee. This one shift can noticeably reduce your morning anxiety within a week." },
+        { title: "Train smarter, not harder", body: "High-intensity cardio raises cortisol further when you're already overloaded. Swap one session per week for a 20-minute walk or yoga session. Your body will respond better — not worse." },
+        { title: "Create a hard stop at 9pm", body: "Cortisol naturally drops in the evening to allow melatonin to rise. Bright screens and high-stimulation content block this. A 9pm wind-down ritual — even just dimming lights and reading — can reset your rhythm within days." }
+      ],
+      cta: "Get the full Cortisol Reset protocol"
+    },
+    C: {
+      name: "Blood Sugar Unstable",
+      intro: "Your blood sugar is spiking and crashing throughout the day — and this is the hidden driver behind your cravings, energy crashes, mood swings, and stubborn weight. Stabilise this, and your hormones follow.",
+      symptoms: ["Energy crashes after meals", "Intense sugar cravings", "Afternoon brain fog", "Weight fluctuations", "Mood swings before period", "Feeling shaky when hungry", "Mental fog"],
+      wins: [
+        { title: "Never eat carbs alone", body: "Every time you eat carbohydrates without protein, fat, or fibre, your blood sugar spikes hard. Pair every meal and snack — even fruit — with a protein source. This one rule can flatten your energy curve dramatically." },
+        { title: "Eat within 30 minutes of waking", body: "Skipping breakfast when your blood sugar is unstable causes your body to release cortisol to compensate. A high-protein breakfast within 30 minutes of waking sets your blood sugar baseline for the entire day." },
+        { title: "Walk after your biggest meal", body: "A 10-minute walk after eating is clinically shown to reduce post-meal blood sugar spikes by up to 30%. Your muscles act as a glucose sink. This is the simplest and most effective blood sugar tool available." }
+      ],
+      cta: "Get the full Blood Sugar Balance protocol"
+    },
+    D: {
+      name: "Under-Fuelled",
+      intro: "Your body is in conservation mode. Years of under-eating, over-exercising, or chronic stress have depleted your resources to the point where your hormones have simply gone quiet. This isn't about willpower — your body is protecting you.",
+      symptoms: ["All-day fatigue", "Hair thinning", "Low appetite", "Light or missing periods", "Feeling cold", "No motivation to exercise", "Burnt out feeling"],
+      wins: [
+        { title: "Eat more — not less", body: "This feels counterintuitive but it's the most important step. Under-fuelling suppresses your thyroid and shuts down your reproductive hormones. Aim to eat at least 3 full meals daily with enough calories to feel satisfied, not just 'not hungry'." },
+        { title: "Prioritise iron, zinc, and B vitamins", body: "These are the most commonly depleted nutrients in your profile. Get a full blood panel including ferritin, not just standard iron. Many women with this profile have ferritin levels that show as 'normal' but are functionally too low for optimal energy." },
+        { title: "Reduce your training load temporarily", body: "More exercise is not the answer right now. Your body needs a recovery window. Swap high-intensity sessions for walking, yoga, or gentle strength work for 4–6 weeks while you rebuild your nutritional foundation." }
+      ],
+      cta: "Get the full Under-Fuelled Recovery protocol"
+    }
+  };
+
+  const combinedProfiles = {
+    "AB": { name: "Oestrogen Dominant + Cortisol Overloaded", intro: "You're dealing with two hormonal imbalances working against each other — high oestrogen and high cortisol. Stress is making your oestrogen dominance worse, and your oestrogen imbalance is making stress harder to manage. Tackling both simultaneously is the key." },
+    "AC": { name: "Oestrogen Dominant + Blood Sugar Unstable", intro: "Unstable blood sugar is feeding your oestrogen dominance. Every time your blood sugar spikes, insulin rises — and high insulin drives oestrogen higher. Stabilising your blood sugar is the first and most important step for you." },
+    "AD": { name: "Oestrogen Dominant + Under-Fuelled", intro: "Your body is simultaneously producing excess oestrogen and running on empty. This is an unusual but important combination — under-fuelling can actually worsen oestrogen dominance by impairing liver detoxification." },
+    "BC": { name: "Cortisol Overloaded + Blood Sugar Unstable", intro: "Cortisol and blood sugar are in a vicious cycle for you. High cortisol raises blood sugar, unstable blood sugar raises cortisol. Breaking this loop — starting with blood sugar stability — is your most powerful first move." },
+    "BD": { name: "Cortisol Overloaded + Under-Fuelled", intro: "Your adrenals are exhausted and your body is depleted. Chronic stress and chronic under-fuelling have compounded each other over time. Rest and nourishment are your medicine right now — not more effort." },
+    "CD": { name: "Blood Sugar Unstable + Under-Fuelled", intro: "Paradoxically, you're both under-fuelled and struggling with blood sugar instability. This often comes from skipping meals and then eating high-carb foods when you finally do eat. Building consistent, balanced meals is your foundation." }
+  };
+
+  // answers stores arrays: { q1: ['A','C'], q2: ['B'], ... }
+  let answers = {};
+
+  // Checkbox change listeners — enable Next button as soon as at least one is checked
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', function() {
+      const qNum = this.name; // e.g. "q1"
+      const checked = [...document.querySelectorAll(`input[name="${qNum}"]:checked`)].map(el => el.value);
+      answers[qNum] = checked;
+      const qIndex = qNum.replace('q','');
+      const btn = document.getElementById('next' + qIndex);
+      if (btn) btn.disabled = checked.length === 0;
+    });
+  });
+
+  function startQuiz() {
+    showScreen('quiz');
+    updateProgress(1);
+  }
+
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function updateProgress(q) {
+    const pct = (q / 5) * 100;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-label').textContent = 'Question ' + q + ' of 5';
+  }
+
+  function nextQ(q) {
+    const qKey = 'q' + q;
+    if (!answers[qKey] || answers[qKey].length === 0) return;
+    document.getElementById('q' + q).classList.remove('active');
+    const next = q + 1;
+    document.getElementById('q' + next).classList.add('active');
+    updateProgress(next);
+    window.scrollTo(0, 0);
+  }
+
+  function prevQ(q) {
+    document.getElementById('q' + q).classList.remove('active');
+    const prev = q - 1;
+    document.getElementById('q' + prev).classList.add('active');
+    updateProgress(prev);
+    window.scrollTo(0, 0);
+  }
+
+  function goToEmail() {
+    if (!answers['q5'] || answers['q5'].length === 0) return;
+    showScreen('email-capture');
+  }
+
+  function calculateResult() {
+    const counts = { A: 0, B: 0, C: 0, D: 0 };
+    // Each question's selected answers each contribute 1 point to their profile
+    Object.values(answers).forEach(selections => {
+      selections.forEach(v => { if (counts[v] !== undefined) counts[v]++; });
+    });
+    const max = Math.max(...Object.values(counts));
+    const winners = Object.keys(counts).filter(k => counts[k] === max && counts[k] > 0);
+
+    if (winners.length === 0) return { type: 'single', key: 'A' }; // fallback
+    if (winners.length === 1) return { type: 'single', key: winners[0] };
+    if (winners.length === 2) {
+      const combo = winners.sort().join('');
+      return { type: 'combo', key: combo };
+    }
+    // 3+ way tie — return top two by ABCD order
+    const top2 = winners.sort().slice(0, 2);
+    return { type: 'combo', key: top2.join('') };
+  }
+
+  function showResult() {
+    const first = document.getElementById('firstName').value.trim();
+    const email = document.getElementById('emailAddress').value.trim();
+    if (!email) { alert('Please enter your email to see your results.'); return; }
+
+    const result = calculateResult();
+    let profile, symptoms, wins;
+
+    if (result.type === 'single') {
+      profile = profiles[result.key];
+      symptoms = profile.symptoms;
+      wins = profile.wins;
+    } else {
+      const combo = combinedProfiles[result.key] || combinedProfiles[result.key.split('').reverse().join('')];
+      const keys = result.key.split('');
+      profile = {
+        name: combo ? combo.name : (profiles[keys[0]].name + ' + ' + profiles[keys[1]].name),
+        intro: combo ? combo.intro : profiles[keys[0]].intro
+      };
+      symptoms = [...new Set([...profiles[keys[0]].symptoms, ...profiles[keys[1]].symptoms])].slice(0, 7);
+      wins = [profiles[keys[0]].wins[0], profiles[keys[1]].wins[0], profiles[keys[0]].wins[1]];
+    }
+
+    // Send to Make webhook
+    const payload = new URLSearchParams({
+      first_name: first,
+      email: email,
+      hormone_profile: profile.name,
+      key_symptoms: symptoms.join(', '),
+      quick_wins: wins.map(w => w.title).join(', '),
+      q1_symptoms: (answers.q1 || []).join(', '),
+      q2_cycle: (answers.q2 || []).join(', '),
+      q3_energy: (answers.q3 || []).join(', '),
+      q4_weight: (answers.q4 || []).join(', '),
+      q5_food_stress: (answers.q5 || []).join(', ')
+    });
+
+    fetch('https://hook.eu2.make.com/mdpno1lb07ah7igen96m93dla6jmqj3b', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: payload.toString()
+    }).catch(err => console.log('Webhook error:', err));
+
+    const greeting = first ? `${first}, you're ` : "You're ";
+
+    const html = `
+      <div class="result-header">
+        <div class="result-badge">✦ Your Hormone Profile</div>
+        <h2 class="result-profile-name">${greeting}<em>${profile.name}</em></h2>
+        <p class="result-intro">${profile.intro}</p>
+      </div>
+
+      <div class="result-divider"></div>
+
+      <p class="result-section-title">Your Key Symptoms</p>
+      <div class="symptoms-grid">
+        ${symptoms.map(s => `<span class="symptom-tag">${s}</span>`).join('')}
+      </div>
+
+      <p class="result-section-title">Your Quick Wins — Start Here</p>
+      <div class="quick-wins">
+        ${wins.map((w, i) => `
+          <div class="win-item">
+            <span class="win-number">0${i+1}</span>
+            <div class="win-content">
+              <h4>${w.title}</h4>
+              <p>${w.body}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="result-cta-box">
+        <p class="cta-eyebrow">Ready to go deeper?</p>
+        <h3 class="cta-title">Get your full<br><em>${profile.name}</em> plan</h3>
+        <p class="cta-subtitle">The quick wins above are just the start. Your full protocol covers exactly what to eat, what to avoid, and which supplements actually move the needle for your specific profile.</p>
+        <button class="btn-primary" onclick="window.location.href='blueprint.html?profile=' + encodeURIComponent(profile.name.toLowerCase().replace(/ /g, '-').replace(/\+/g, '-').replace(/--+/g, '-'))">Get The Full Protocol →</button>
+      </div>
+    `;
+
+    document.getElementById('result-content').innerHTML = html;
+    showScreen('result');
+  }
+</script>
+</body>
+</html>
