@@ -21,6 +21,22 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZLDXJ41VF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2ZLDXJ41VF');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "voapc5e7xw");
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -895,11 +911,13 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
   });
 
   function goToSales(profileName) {
+    gtag('event', 'cta_clicked', { hormone_profile: profileName });
     var slug = profileName.toLowerCase().split(' + ')[0].trim().split(' ').join('-');
     window.location.href = 'blueprint.html?profile=' + encodeURIComponent(slug);
   }
 
   function startQuiz() {
+    gtag('event', 'quiz_started');
     showScreen('quiz');
     updateProgress(1);
   }
@@ -936,6 +954,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
 
   function goToEmail() {
     if (!answers['q5'] || answers['q5'].length === 0) return;
+    gtag('event', 'quiz_completed');
     showScreen('email-capture');
   }
 
@@ -965,6 +984,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     if (!email) { alert('Please enter your email to see your results.'); return; }
 
     fbq('track', 'Lead');
+    gtag('event', 'email_submitted');
 
     const result = calculateResult();
     let profile, symptoms, wins;
