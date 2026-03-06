@@ -1043,6 +1043,8 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     const first = document.getElementById('firstName').value.trim();
     const email = document.getElementById('emailAddress').value.trim();
     if (!email) { alert('Please enter your email to see your results.'); return; }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) { alert('Please enter a valid email address.'); return; }
 
     fbq('track', 'Lead');
     gtag('event', 'email_submitted');
