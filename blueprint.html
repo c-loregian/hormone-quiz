@@ -183,7 +183,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
 
   .price {
@@ -192,15 +192,6 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     font-weight: 500;
     color: var(--text);
     line-height: 1;
-  }
-
-  .price-currency-note {
-    font-size: 11px;
-    font-weight: 300;
-    color: var(--text-light);
-    opacity: 0.6;
-    margin-bottom: 8px;
-    text-align: center;
   }
 
   .price-note {
@@ -410,36 +401,6 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     min-width: 12px;
   }
 
-  /* ── OUTCOME GRID ── */
-  .outcome-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 28px;
-  }
-
-  .outcome-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 18px 22px;
-    background: linear-gradient(135deg, rgba(139,74,58,0.05) 0%, rgba(232,196,184,0.1) 100%);
-    border: 1px solid var(--blush);
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.6;
-    color: var(--text);
-  }
-
-  .outcome-item::before {
-    content: '✦';
-    color: var(--rose);
-    font-size: 10px;
-    margin-top: 5px;
-    min-width: 12px;
-  }
-
   /* ── URGENCY ── */
   .urgency-bar {
     background: var(--deep-rose);
@@ -503,21 +464,11 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     <p class="hero-intro" id="hero-intro">Loading your personalised results...</p>
   </div>
 
-  <!-- DISCOVERY SECTION - moved above CTA to build trust first -->
-  <section style="border-top: none; padding-top: 0; padding-bottom: 48px;">
-    <p class="section-label">The discovery</p>
-    <h2 class="section-title">How Jenni fixed her hormones<br>when doctors <em>couldn't help</em></h2>
-    <p class="section-body">Jenni spent years suffering with heavy periods, debilitating PMS, chest pains, heart palpitations, and anxiety — all dismissed by her GP as "just her period." She was offered the pill six times. She refused six times.</p>
-    <p class="section-body">So she did what no one else would do for her. She spent years researching, reading, and testing everything she could find about the female body, hormones, and the menstrual cycle. She changed what she ate, how she moved, and how she lived. <strong>Her cycles became regular. Her PMS disappeared. She felt like herself again.</strong></p>
-    <p class="section-body">She documented everything she learned into the Hormone Balancing Blueprint — a complete guide built specifically for women, around women's biology, using evidence-based protocols that actually address root causes rather than masking symptoms.</p>
-  </section>
-
   <!-- CTA TOP -->
   <div class="cta-block fade-in">
     <div class="price-line">
-      <span class="price" id="price-display-top">$9.99 USD</span>
+      <span class="price">$9.99</span>
     </div>
-    <p class="price-currency-note" id="currency-note-top"></p>
     <p class="price-note">One-time payment · Instant digital download</p>
     <a href="https://buy.stripe.com/dRm9AScrOgxh9Yf56X2cg06" class="btn-buy" id="cta-btn-top" onclick="gtag('event', 'stripe_click', { position: 'top' })">Get The Hormone Balancing Blueprint →</a>
     <p class="secure-note">🔒 Secure checkout via Stripe</p>
@@ -530,6 +481,15 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     <p class="section-body" id="problem-body"></p>
     <div class="problem-grid" id="problem-grid"></div>
     <p class="section-body" id="problem-body2"></p>
+  </section>
+
+  <!-- DISCOVERY SECTION -->
+  <section>
+    <p class="section-label">The discovery</p>
+    <h2 class="section-title">How Jenni fixed her hormones<br>when doctors <em>couldn't help</em></h2>
+    <p class="section-body">Jenni spent years suffering with heavy periods, debilitating PMS, chest pains, heart palpitations, and anxiety — all dismissed by her GP as "just her period." She was offered the pill six times. She refused six times.</p>
+    <p class="section-body">So she did what no one else would do for her. She spent years researching, reading, and testing everything she could find about the female body, hormones, and the menstrual cycle. She changed what she ate, how she moved, and how she lived. <strong>Her cycles became regular. Her PMS disappeared. She felt like herself again.</strong></p>
+    <p class="section-body">She documented everything she learned into the Hormone Balancing Blueprint — a complete guide built specifically for women, around women's biology, using evidence-based protocols that actually address root causes rather than masking symptoms.</p>
   </section>
 
   <!-- WHAT'S INSIDE -->
@@ -564,13 +524,6 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- OUTCOME SECTION -->
-  <section>
-    <p class="section-label">What changes when you fix this</p>
-    <h2 class="section-title" id="outcome-title">This is what your life looks like<br><em>on the other side</em></h2>
-    <div class="outcome-grid" id="outcome-grid"></div>
-  </section>
-
   <!-- REVIEWS -->
   <section>
     <p class="section-label" style="text-align:center;">What women are saying</p>
@@ -595,15 +548,6 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
         <p style="font-size:15px; font-weight:300; line-height:1.7; color:var(--text-light);">Girl, I love your page and I bought your hormonal guide. I have seen some of these tips scattered across different podcasts and posts and I'm always saving them but having it all in one guide (and at a reasonable price) is amazing. So, thank you! Love the layout aesthetic too! ❤️</p>
       </div>
 
-      <div style="background:rgba(255,255,255,0.7); border:1px solid var(--border); border-radius:12px; padding:28px 28px;">
-        <div style="color:#F5A623; font-size:18px; margin-bottom:14px;">★★★★★</div>
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <div style="width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#C4A882,#A08060); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-style:italic; color:white; font-size:18px;">A</div>
-          <span style="font-weight:500; font-size:15px; color:var(--text);">Izzy</span>
-        </div>
-        <p style="font-size:15px; font-weight:300; line-height:1.7; color:var(--text-light);">Literally watch all your videos and have learnt so much from the ebook too. Everything you talk about isn't talked about enough — this is exactly the kind of content women need and aren't getting anywhere else. Keep smashing it.</p>
-      </div>
-
     </div>
   </section>
 
@@ -615,9 +559,19 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       <h2 class="section-title" style="text-align:center; margin-bottom:8px;">The Hormone Balancing<br><em>Blueprint</em></h2>
       <p class="price-note" style="margin-bottom:4px; font-size:15px; color:var(--text);">Everything you need to understand and fix your hormones.</p>
       <p class="price-note" style="margin-bottom:28px;">Built for your profile. Backed by science. Written like a friend.</p>
-      <div class="price-line"><span class="price" id="price-display-bottom">$9.99 USD</span></div>
-      <p class="price-currency-note" id="currency-note-bottom"></p>
-      <p class="price-note">One-time payment · Instant digital download</p>
+      <div class="price-line"><span class="price">$9.99</span></div>
+      <p class="price-note" style="margin-bottom:24px;">One-time payment · Instant digital download</p>
+
+      <div style="text-align:left; background:rgba(255,255,255,0.5); border:1px solid var(--border); border-radius:10px; padding:20px 22px; margin-bottom:24px;">
+        <p style="font-size:14px; font-weight:500; color:var(--text); margin-bottom:12px;">$9.99 for the protocol that would cost you:</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; margin-bottom:14px;">
+          <li style="font-size:13px; font-weight:300; color:var(--text-light); display:flex; align-items:flex-start; gap:8px;"><span style="color:var(--rose); margin-top:1px;">✦</span>$200+ in doctor's appointments that lead nowhere</li>
+          <li style="font-size:13px; font-weight:300; color:var(--text-light); display:flex; align-items:flex-start; gap:8px;"><span style="color:var(--rose); margin-top:1px;">✦</span>$150/month on supplements you don't need</li>
+          <li style="font-size:13px; font-weight:300; color:var(--text-light); display:flex; align-items:flex-start; gap:8px;"><span style="color:var(--rose); margin-top:1px;">✦</span>Months of trial and error with random Instagram advice</li>
+        </ul>
+        <p style="font-size:14px; font-weight:400; color:var(--text); font-style:italic;">Or you can start today for less than your last Uber.</p>
+      </div>
+
       <a href="https://buy.stripe.com/dRm9AScrOgxh9Yf56X2cg06" class="btn-buy" id="cta-btn-bottom" onclick="gtag('event', 'stripe_click', { position: 'bottom' })">Get Instant Access →</a>
       <p class="secure-note">🔒 Secure checkout via Stripe · No subscription</p>
     </div>
@@ -717,60 +671,6 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     }
   };
 
-  // Profile-specific outcome statements
-  const outcomeStatements = {
-    'oestrogen-dominant': [
-      "You stop dreading the week before your period.",
-      "Your skin stops being the first thing you think about in the morning.",
-      "The weight around your hips and thighs starts to respond — because you're finally fixing the right thing.",
-      "Your periods become lighter and more predictable.",
-      "You understand your body. That knowledge alone changes everything."
-    ],
-    'cortisol-overloaded': [
-      "You sleep through the night and wake up feeling like you actually rested.",
-      "The belly weight starts to shift — not because you're eating less, but because your body finally feels safe.",
-      "You stop needing caffeine to function.",
-      "Your periods return or become more regular.",
-      "You feel calm. Not just less anxious — genuinely calm."
-    ],
-    'blood-sugar-unstable': [
-      "The 3pm crash disappears.",
-      "You stop thinking about food every hour.",
-      "Your mood stops swinging with your meals.",
-      "Your skin clears up — because stable blood sugar means stable hormones.",
-      "You have consistent energy from morning to evening. No spikes. No crashes."
-    ],
-    'under-fuelled': [
-      "You wake up and actually have energy to start the day.",
-      "Your period comes back, or becomes more regular and less painful.",
-      "Your hair stops shedding.",
-      "Your body starts to change — because it finally has the resources to.",
-      "You stop fighting yourself. You start working with your body."
-    ]
-  };
-
-  const genericOutcomes = [
-    "You stop treating symptoms and start fixing the root cause.",
-    "You understand what your body has been trying to tell you.",
-    "Your energy stabilises. Your skin improves. Your cycle becomes more predictable.",
-    "You feel confident in your body again — maybe for the first time in years.",
-    "You finally have a clear, specific plan. Not generic advice. Your plan."
-  ];
-
-  // Currency — priced in USD, Stripe handles local conversion at checkout
-  function setCurrency() {
-    const price = '$9.99 USD';
-    const note = 'Stripe will show your local currency equivalent at checkout.';
-    ['price-display-top', 'price-display-bottom'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = price;
-    });
-    ['currency-note-top', 'currency-note-bottom'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = note;
-    });
-  }
-
   const insideItems = [
     { icon: '🧬', title: 'The complete hormone education', body: 'Finally understand what your hormones actually do, why they go out of balance, and how they interact as a system — not just individual labels.' },
     { icon: '🔥', title: 'The anti-inflammatory nutrition framework', body: 'The omega-3 protocol, fibre targets, and whole food approach that reduces the systemic inflammation driving your symptoms.' },
@@ -800,7 +700,6 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
   }
 
   function render() {
-    setCurrency();
     const key = getProfile();
     const p = key ? profiles[key] : null;
 
@@ -814,12 +713,6 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
         </div>
       </div>
     `).join('');
-
-    // Render outcome grid
-    const outcomes = key && outcomeStatements[key] ? outcomeStatements[key] : genericOutcomes;
-    document.getElementById('outcome-grid').innerHTML = outcomes.map(o =>
-      `<div class="outcome-item">${o}</div>`
-    ).join('');
 
     if (!p) {
       // Generic fallback if no profile param
