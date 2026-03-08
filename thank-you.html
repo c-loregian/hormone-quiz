@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're In | Jenni Mae Wellness</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZLDXJ41VF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2ZLDXJ41VF');
+    gtag('event', 'purchase_thank_you_view');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1194638015814153');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "voapc5e7xw");
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FAF6F0;
+      --blush: #E8C4B8;
+      --rose: #C4806A;
+      --deep-rose: #8B4A3A;
+      --sage: #8A9E8C;
+      --text: #2C1810;
+      --text-light: #6B4C42;
+      --border: #E5D5CC;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 10% 5%, rgba(232,196,184,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 70% at 90% 95%, rgba(138,158,140,0.2) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── CONFIRMATION ── */
+    .confirmation {
+      padding: 72px 0 48px;
+      text-align: center;
+    }
+
+    .brand {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    .check-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sage), #6B8A6C);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .check-circle svg {
+      width: 28px;
+      height: 28px;
+      stroke: white;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .confirmation-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 16px;
+    }
+
+    .confirmation-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .confirmation-title em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .confirmation-sub {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-light);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--blush);
+      margin: 36px auto;
+    }
+
+    /* ── NEXT STEPS ── */
+    .next-steps-wrap {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 40px 36px;
+      margin-bottom: 48px;
+    }
+
+    .next-steps-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+      color: white;
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text {
+      padding-top: 4px;
+    }
+
+    .step-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .step-text p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+
+    /* ── SIGN OFF ── */
+    .signoff {
+      text-align: center;
+      padding-bottom: 8px;
+    }
+
+    .signoff p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.7;
+      max-width: 420px;
+      margin: 0 auto 12px;
+    }
+
+    .signoff .sig {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--rose);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 0 0;
+      font-size: 12px;
+      color: var(--text-light);
+      opacity: 0.5;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+    }
+
+    /* ── FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .fade-in:nth-child(2) { animation-delay: 0.15s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.45s; }
+    .fade-in:nth-child(5) { animation-delay: 0.6s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .confirmation { padding: 56px 0 36px; }
+      .next-steps-wrap { padding: 28px 20px 24px; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- CONFIRMATION -->
+  <div class="confirmation fade-in">
+    <span class="brand">Jenni Mae Wellness</span>
+
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+
+    <p class="confirmation-label">Order confirmed</p>
+    <h1 class="confirmation-title">You're in.<br><em>Check your inbox.</em></h1>
+    <p class="confirmation-sub">Your Hormone Balancing Blueprint is on its way. It'll be with you in the next few minutes.</p>
+  </div>
+
+  <div class="divider fade-in"></div>
+
+  <!-- NEXT STEPS -->
+  <div class="next-steps-wrap fade-in">
+    <p class="next-steps-eyebrow">What to do now</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Check your email</strong>
+        <p>Your Blueprint download link is on its way. If you don't see it, check your junk or spam folder and move it to your inbox.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Read it through in your own time</strong>
+        <p>No rush. Find a quiet moment, make a tea, and go through it properly. It's worth it.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Pick one thing to start today</strong>
+        <p>Don't try to change everything at once. One shift compounds fast.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGN OFF -->
+  <div class="signoff fade-in">
+    <p>So glad you're here. This is the start of something that's going to feel really different.</p>
+    <span class="sig">— Jenni Mae 💛</span>
+  </div>
+
+  <footer class="fade-in">
+    <p>© 2025 Jenni Mae Wellness · All rights reserved</p>
+  </footer>
+
+</div>
+
+<!-- Purchase event handled server-side via Stripe → Make.com → Meta Conversions API -->
+
+</body>
+</html>
