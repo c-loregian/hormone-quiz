@@ -663,7 +663,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
   <!-- OUTCOMES SECTION -->
   <section>
     <p class="section-label" id="specific-label">What changes for you</p>
-    <h2 class="section-title" id="specific-title">Here's what your life<br>looks like <em id="specific-profile-name">fixed</em></h2>
+    <h2 class="section-title" id="specific-title">Here's what your life<br>will look like</h2>
     <p class="section-body" id="specific-body"></p>
     <div class="outcomes-grid" id="outcomes-grid"></div>
     <p class="section-body" id="specific-body2"></p>
@@ -779,7 +779,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       problemBody: 'Hormonal acne cream. Period pain tablets. Cutting calories. You\'ve probably tried all of it. And it works — until it doesn\'t. Because none of those things address why your oestrogen is elevated in the first place.',
       problemPills: ['Hormonal acne', 'Bloating', 'Heavy periods', 'Hip & thigh weight gain', 'Breast tenderness', 'PMS mood swings', 'Difficulty losing weight'],
       problemBody2: 'Oestrogen dominance happens when your body can\'t clear used oestrogen efficiently — often because your liver and gut aren\'t getting the support they need. The Blueprint shows you exactly how to fix that.',
-      specificTitle: 'Here\'s what your life<br>looks like',
+      specificTitle: 'Here\'s what your life<br>will look like',
       specificBody: '',
       outcomeCards: [
         { icon: '⚖️', headline: 'Lose weight and<br><em>feel confident</em>', desc: 'Stop fighting your body. When oestrogen is balanced, the hip and thigh weight that wouldn\'t budge finally responds.' },
@@ -797,7 +797,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       problemBody: 'More HIIT. Less food. More caffeine to push through. If this sounds familiar, you\'re not broken — you\'re just running a strategy that works for men\'s hormones, not yours. Every one of those things spikes cortisol further.',
       problemPills: ['Belly fat that won\'t move', 'Wired but exhausted', 'Irregular periods', 'Puffy face', 'Anxiety', 'Late-night second wind', 'Caffeine dependency'],
       problemBody2: 'High cortisol tells your body it\'s in danger — so it holds onto fat, suppresses ovulation, and keeps you in a state of chronic low-grade stress. The fix isn\'t more willpower. It\'s understanding what your body actually needs.',
-      specificTitle: 'Here\'s what your life<br>looks like',
+      specificTitle: 'Here\'s what your life<br>will look like',
       specificBody: '',
       outcomeCards: [
         { icon: '⚖️', headline: 'Lose weight and<br><em>feel confident</em>', desc: 'Stop fighting your body. Cortisol-driven belly fat is the first to go when you stop spiking your stress hormones.' },
@@ -815,7 +815,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       problemBody: 'The cravings aren\'t weakness. The afternoon crash isn\'t laziness. When your blood sugar spikes and crashes repeatedly throughout the day, your body is doing exactly what it\'s designed to do — and it\'s pulling your hormones in every direction with it.',
       problemPills: ['Energy crashes after meals', 'Intense sugar cravings', 'Afternoon brain fog', 'Weight fluctuations', 'Mood swings', 'Feeling shaky when hungry', 'Can\'t lose weight consistently'],
       problemBody2: 'Unstable blood sugar drives up insulin — and high insulin directly disrupts ovulation, increases androgen production, and drives inflammation. Stabilise this one thing and your hormones have a real chance to rebalance.',
-      specificTitle: 'Here\'s what your life<br>looks like',
+      specificTitle: 'Here\'s what your life<br>will look like',
       specificBody: '',
       outcomeCards: [
         { icon: '⚖️', headline: 'Lose weight and<br><em>feel confident</em>', desc: 'When insulin spikes stop, fat storage stops. Consistent weight loss becomes possible for the first time.' },
@@ -833,7 +833,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       problemBody: 'This is the hardest thing to hear — but the approach you\'ve probably been told to follow is the very thing keeping you stuck. When your body doesn\'t feel safe, it shuts down non-essential functions. Reproduction is the first to go. Then your metabolism. Then your thyroid.',
       problemPills: ['All-day fatigue', 'Hair thinning', 'Light or missing periods', 'Feeling cold', 'Low appetite', 'Can\'t build muscle', 'Burnt out feeling'],
       problemBody2: 'The fitness industry has spent decades telling women to eat less and move more. But that advice doesn\'t account for women\'s biology. Jenni was doing 6 intense training sessions a week on 1-2 meals a day — and holding more fat than when she started. The moment she ate more, everything changed.',
-      specificTitle: 'Here\'s what your life<br>looks like',
+      specificTitle: 'Here\'s what your life<br>will look like',
       specificBody: '',
       outcomeCards: [
         { icon: '⚖️', headline: 'Lose weight and<br><em>feel confident</em>', desc: 'When you eat enough, your body stops holding on. Fat loss becomes possible without restriction — and you stop hiding.' },
@@ -895,7 +895,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       document.getElementById('problem-grid').innerHTML = ['Hormonal acne', 'Heavy periods', 'Irregular cycles', 'Fatigue', 'Weight gain', 'Bloating', 'Mood swings', 'Brain fog'].map(s => `<span class="problem-pill">${s}</span>`).join('');
       document.getElementById('problem-body2').textContent = 'The Blueprint gives you the root cause framework — so you stop managing symptoms and start fixing what\'s actually driving them.';
       document.getElementById('specific-label').textContent = 'What changes for you';
-      document.getElementById('specific-title').innerHTML = 'Here\'s what your life<br>looks like <em id="specific-profile-name">fixed</em>';
+      document.getElementById('specific-title').innerHTML = 'Here\'s what your life<br>will look like';
       document.getElementById('specific-body').textContent = '';
       document.getElementById('outcomes-grid').innerHTML = [
         { icon: '⚖️', headline: 'Lose weight and<br><em>feel confident</em>', desc: 'Stop fighting your body. When hormones are balanced, fat loss becomes possible — without restriction, without the rebound.' },
@@ -924,7 +924,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       `<span class="problem-pill ${i < 3 ? 'active' : ''}">${s}</span>`
     ).join('');
     document.getElementById('problem-body2').textContent = p.problemBody2;
-    document.getElementById('specific-title').innerHTML = p.specificTitle + ' <em id="specific-profile-name">' + p.badge + '</em>';
+    document.getElementById('specific-title').innerHTML = p.specificTitle;
     document.getElementById('specific-body').textContent = p.specificBody;
     document.getElementById('outcomes-grid').innerHTML = p.outcomeCards.map(c => `
       <div class="outcome-card">
