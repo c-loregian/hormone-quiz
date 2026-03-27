@@ -670,9 +670,9 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
   <div class="container">
     <div class="brand">Jenni Mae Wellness</div>
     <p class="intro-eyebrow">Free Hormone Check</p>
-    <h1 class="intro-title">Find out <em>exactly</em> what's throwing your hormones off — in 60 seconds</h1>
+    <h1 class="intro-title">Find out <em>what</em> your symptoms may be telling you about your hormones — in 60 seconds</h1>
     <div class="intro-divider"></div>
-    <p class="intro-description">Weight, acne, exhaustion, irregular periods — answer 5 quick questions and get instant clarity on what's actually causing it.</p>
+    <p class="intro-description">Weight changes, acne, exhaustion, irregular periods — answer 6 quick questions and get personalised insight into the symptom patterns that may be affecting how you feel.</p>
     <button class="btn-primary" onclick="startQuiz()">Start the Free Check →</button>
     <p class="intro-note">Takes 60 seconds · No sign-up required to start</p>
     <div class="intro-pills">
@@ -875,7 +875,7 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
   <div class="container">
     <p class="email-eyebrow">Almost there</p>
     <h2 class="email-title">Your results are<br><em>ready.</em></h2>
-    <p class="email-subtitle">Enter your details below and we'll show you your hormone profile plus the exact steps to start fixing it today.</p>
+    <p class="email-subtitle">Enter your details below and we'll show you your hormone symptom profile plus suggested steps to start supporting your hormones today.</p>
     <div class="email-form">
       <div class="input-group">
         <input type="text" class="input-field" id="firstName" placeholder="First name" />
@@ -898,61 +898,61 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
   const profiles = {
     A: {
       name: "Oestrogen Dominant",
-      intro: "Your body is producing too much oestrogen relative to progesterone. This creates a specific cascade of symptoms — and the good news is, once you know this is your root cause, the path forward becomes much clearer.",
+      intro: "Based on your answers, your symptoms may be associated with oestrogen dominance — where oestrogen is high relative to progesterone. This creates a recognisable pattern of symptoms, and once you understand this as a potential root cause, the nutritional and lifestyle steps become much clearer. This is not a medical diagnosis — if you have concerns, please speak with a healthcare professional.",
       symptoms: ["Bloating", "Breast tenderness", "Hormonal acne", "Heavy periods", "Mood swings", "Hip & thigh weight gain", "PMS cravings"],
       wins: [
-        { title: "Support oestrogen clearance daily", body: "Your liver is the key player here. Focus on cruciferous vegetables (broccoli, cauliflower, kale) every day — they contain a compound called DIM that helps your body process and clear excess oestrogen." },
-        { title: "Reduce your toxic load", body: "Oestrogen dominance is often worsened by xenoestrogens — chemicals in plastics, conventional beauty products, and synthetic fragrances that mimic oestrogen in your body. Swap to glass, clean products, and unscented where possible." },
-        { title: "Prioritise progesterone-supporting habits", body: "Magnesium glycinate before bed, vitamin B6, and managing blood sugar all help your body produce more progesterone — the hormone that balances oestrogen's effects." }
+        { title: "Support oestrogen clearance daily", body: "The liver plays a key role in processing and clearing oestrogen. Cruciferous vegetables such as broccoli, cauliflower, and kale contain a compound called DIM that may help support this process when eaten regularly." },
+        { title: "Reduce your toxic load", body: "Oestrogen dominance may be worsened by xenoestrogens — chemicals found in plastics, conventional beauty products, and synthetic fragrances that can mimic oestrogen in the body. Switching to glass, cleaner products, and unscented options where possible is worth considering." },
+        { title: "Prioritise progesterone-supporting habits", body: "Magnesium glycinate before bed, vitamin B6, and supporting stable blood sugar are all associated with helping the body produce adequate progesterone — the hormone that helps balance oestrogen's effects." }
       ],
-      outcome: "Women who fix this start noticing the difference within weeks. Clearer skin. Lighter periods. Weight that finally responds. And underneath all of it — a feeling of being back in your own body.",
+      outcome: "Many women who address oestrogen dominance through nutrition and lifestyle changes report improvements over time, including clearer skin, lighter periods, and more stable mood and energy. Individual results vary and these suggestions are not a substitute for personalised medical advice.",
       cta: "Get the full Oestrogen Dominant protocol"
     },
     B: {
       name: "Cortisol Overloaded",
-      intro: "Your stress hormone is running the show — and it's dragging everything else down with it. High cortisol suppresses your reproductive hormones, wrecks your sleep cycle, and makes fat loss nearly impossible. This is fixable.",
+      intro: "Based on your answers, your symptoms may be associated with elevated cortisol — your primary stress hormone. When cortisol is chronically elevated, it can affect reproductive hormones, sleep quality, and the body's ability to manage weight. This is not a medical diagnosis — if you have concerns, please speak with a healthcare professional.",
       symptoms: ["Belly weight gain", "Wired but exhausted", "Irregular periods", "Puffy face", "Anxiety", "Late-night energy spikes", "Caffeine dependency"],
       wins: [
-        { title: "Break the cortisol-caffeine loop", body: "Caffeine on an empty stomach spikes cortisol immediately. Start your morning with protein and fat first — then coffee. This one shift can noticeably reduce your morning anxiety within a week." },
-        { title: "Train smarter, not harder", body: "High-intensity cardio raises cortisol further when you're already overloaded. Swap one session per week for a 20-minute walk or yoga session. Your body will respond better — not worse." },
-        { title: "Create a hard stop at 9pm", body: "Cortisol naturally drops in the evening to allow melatonin to rise. Bright screens and high-stimulation content block this. A 9pm wind-down ritual — even just dimming lights and reading — can reset your rhythm within days." }
+        { title: "Break the cortisol-caffeine loop", body: "Caffeine consumed on an empty stomach may spike cortisol further. Starting your morning with protein and fat before coffee is associated with more stable cortisol levels and may support reduced morning anxiety over time." },
+        { title: "Train smarter, not harder", body: "High-intensity exercise can raise cortisol further when the body is already under stress. Swapping one high-intensity session per week for a walk or yoga practice may support better hormonal balance rather than compounding the load." },
+        { title: "Create a consistent wind-down routine", body: "Cortisol naturally drops in the evening to allow melatonin to rise. Bright screens and high-stimulation content in the evening may interfere with this. A consistent wind-down routine — dimming lights, reducing screen time — may support a more natural cortisol rhythm over time." }
       ],
-      outcome: "When cortisol comes down, everything else shifts. You sleep properly. The belly weight starts to move. You stop feeling like you're running on fumes. You feel like yourself again.",
+      outcome: "Many women who support cortisol regulation through lifestyle changes report improvements in sleep quality, energy, and mood over time. Individual results vary and these suggestions are not a substitute for personalised medical advice.",
       cta: "Get the full Cortisol Reset protocol"
     },
     C: {
       name: "Blood Sugar Unstable",
-      intro: "Your blood sugar is spiking and crashing throughout the day — and this is the hidden driver behind your cravings, energy crashes, mood swings, and stubborn weight. Stabilise this, and your hormones follow.",
+      intro: "Based on your answers, your symptoms may be associated with blood sugar instability — where blood sugar is spiking and crashing throughout the day. This pattern is associated with cravings, energy dips, mood changes, and hormonal disruption. This is not a medical diagnosis — if you have concerns, please speak with a healthcare professional.",
       symptoms: ["Energy crashes after meals", "Intense sugar cravings", "Afternoon brain fog", "Weight fluctuations", "Mood swings before period", "Feeling shaky when hungry", "Mental fog"],
       wins: [
-        { title: "Never eat carbs alone", body: "Every time you eat carbohydrates without protein, fat, or fibre, your blood sugar spikes hard. Pair every meal and snack — even fruit — with a protein source. This one rule can flatten your energy curve dramatically." },
-        { title: "Eat within 30 minutes of waking", body: "Skipping breakfast when your blood sugar is unstable causes your body to release cortisol to compensate. A high-protein breakfast within 30 minutes of waking sets your blood sugar baseline for the entire day." },
-        { title: "Walk after your biggest meal", body: "A 10-minute walk after eating is clinically shown to reduce post-meal blood sugar spikes by up to 30%. Your muscles act as a glucose sink. This is the simplest and most effective blood sugar tool available." }
+        { title: "Avoid eating carbs alone", body: "Eating carbohydrates without protein, fat, or fibre is associated with sharper blood sugar spikes. Pairing every meal and snack with a protein source may help support more stable energy levels throughout the day." },
+        { title: "Eat within 30 to 60 minutes of waking", body: "Skipping breakfast when blood sugar is unstable may cause the body to release cortisol to compensate. A high-protein breakfast eaten shortly after waking is associated with a more stable blood sugar baseline through the day." },
+        { title: "Walk after your biggest meal", body: "Research suggests a short walk after eating may help support more stable post-meal blood sugar levels. Even 10 minutes is associated with meaningful benefit, as muscles can use glucose for energy during movement." }
       ],
-      outcome: "Once your blood sugar stabilises, the cravings quieten. The energy evens out. The mood swings before your period start to ease. Your body finally has the stable foundation it needs to feel good consistently.",
+      outcome: "Many women who support blood sugar stability through diet and lifestyle report improvements in energy, cravings, and mood over time. Individual results vary and these suggestions are not a substitute for personalised medical advice.",
       cta: "Get the full Blood Sugar Balance protocol"
     },
     D: {
       name: "Under-Fuelled",
-      intro: "Your body is in conservation mode. Years of under-eating, over-exercising, or chronic stress have depleted your resources to the point where your hormones have simply gone quiet. This isn't about willpower — your body is protecting you.",
+      intro: "Based on your answers, your symptoms may be associated with under-fuelling — where the body has been under significant nutritional or physical stress for an extended period. When energy availability is consistently low, the body may down-regulate hormonal function as a protective response. This is not a medical diagnosis — if you have concerns, please speak with a healthcare professional.",
       symptoms: ["All-day fatigue", "Hair thinning", "Low appetite", "Light or missing periods", "Feeling cold", "No motivation to exercise", "Burnt out feeling"],
       wins: [
-        { title: "Eat more — not less", body: "This feels counterintuitive but it's the most important step. Under-fuelling suppresses your thyroid and shuts down your reproductive hormones. Aim to eat at least 3 full meals daily with enough calories to feel satisfied, not just 'not hungry'." },
-        { title: "Prioritise iron, zinc, and B vitamins", body: "These are the most commonly depleted nutrients in your profile. Get a full blood panel including ferritin, not just standard iron. Many women with this profile have ferritin levels that show as 'normal' but are functionally too low for optimal energy." },
-        { title: "Reduce your training load temporarily", body: "More exercise is not the answer right now. Your body needs a recovery window. Swap high-intensity sessions for walking, yoga, or gentle strength work for 4–6 weeks while you rebuild your nutritional foundation." }
+        { title: "Prioritise consistent nourishment", body: "Under-fuelling is associated with suppressed thyroid function and reduced reproductive hormone output. Aiming for at least three full, balanced meals daily — enough to feel genuinely satisfied — may help support the body's return to normal hormonal function over time." },
+        { title: "Prioritise iron, zinc, and B vitamins", body: "These nutrients are among the most commonly depleted in this symptom profile. It may be worth discussing a full blood panel including ferritin with your healthcare provider, as some women can have functionally low ferritin while standard iron markers appear normal." },
+        { title: "Reduce training load temporarily", body: "When the body is depleted, additional high-intensity exercise may compound the stress load rather than improve it. Temporarily swapping intense sessions for walking, yoga, or gentle strength work while rebuilding nutritional foundations is worth considering." }
       ],
-      outcome: "When you start nourishing your body properly, things come back online. Energy returns. Your period comes back or becomes more regular. Your skin improves. You stop feeling like you're fighting your own body every single day.",
+      outcome: "Many women who prioritise consistent nourishment and recovery report gradual improvements in energy, cycle regularity, and overall wellbeing over time. Individual results vary and these suggestions are not a substitute for personalised medical advice.",
       cta: "Get the full Under-Fuelled Recovery protocol"
     }
   };
 
   const combinedProfiles = {
-    "AB": { name: "Oestrogen Dominant + Cortisol Overloaded", intro: "You're dealing with two hormonal imbalances working against each other — high oestrogen and high cortisol. Stress is making your oestrogen dominance worse, and your oestrogen imbalance is making stress harder to manage. Tackling both simultaneously is the key.", outcome: "When both imbalances are addressed together, the transformation is significant. Better sleep, clearer skin, a calmer nervous system, and weight that finally starts to respond." },
-    "AC": { name: "Oestrogen Dominant + Blood Sugar Unstable", intro: "Unstable blood sugar is feeding your oestrogen dominance. Every time your blood sugar spikes, insulin rises — and high insulin drives oestrogen higher. Stabilising your blood sugar is the first and most important step for you.", outcome: "Stable blood sugar, clearer skin, lighter periods, and a body that finally feels like it's working with you instead of against you." },
-    "AD": { name: "Oestrogen Dominant + Under-Fuelled", intro: "Your body is simultaneously producing excess oestrogen and running on empty. This is an unusual but important combination — under-fuelling can actually worsen oestrogen dominance by impairing liver detoxification.", outcome: "More energy, lighter periods, clearer skin, and a body that finally has the resources to rebalance properly." },
-    "BC": { name: "Cortisol Overloaded + Blood Sugar Unstable", intro: "Cortisol and blood sugar are in a vicious cycle for you. High cortisol raises blood sugar, unstable blood sugar raises cortisol. Breaking this loop — starting with blood sugar stability — is your most powerful first move.", outcome: "Less anxiety, steadier energy, fewer cravings, and a nervous system that isn't permanently stuck in survival mode." },
-    "BD": { name: "Cortisol Overloaded + Under-Fuelled", intro: "Your adrenals are exhausted and your body is depleted. Chronic stress and chronic under-fuelling have compounded each other over time. Rest and nourishment are your medicine right now — not more effort.", outcome: "Real rest. Real recovery. Energy that isn't borrowed from tomorrow. A body that feels safe enough to let go." },
-    "CD": { name: "Blood Sugar Unstable + Under-Fuelled", intro: "Paradoxically, you're both under-fuelled and struggling with blood sugar instability. This often comes from skipping meals and then eating high-carb foods when you finally do eat. Building consistent, balanced meals is your foundation.", outcome: "Stable energy, no more crash-and-crave cycles, and a body that finally has enough fuel to function — and feel good." }
+    "AB": { name: "Oestrogen Dominant + Cortisol Overloaded", intro: "Based on your answers, your symptoms may be associated with two overlapping hormonal patterns — elevated oestrogen relative to progesterone, and elevated cortisol. These two patterns can compound each other, with stress potentially worsening oestrogen imbalance and vice versa. Addressing both through nutrition and lifestyle is worth prioritising. This is not a medical diagnosis — please speak with a healthcare professional if you have concerns.", outcome: "Many women who address both patterns together report improvements in sleep quality, skin, energy, and cycle regularity over time. Individual results vary." },
+    "AC": { name: "Oestrogen Dominant + Blood Sugar Unstable", intro: "Based on your answers, your symptoms may be associated with both oestrogen imbalance and blood sugar instability. These patterns are closely linked — chronically elevated insulin is associated with higher oestrogen levels, so supporting blood sugar stability may be a helpful first step. This is not a medical diagnosis — please speak with a healthcare professional if you have concerns.", outcome: "Many women who support both blood sugar stability and oestrogen clearance report improvements in skin, cycle regularity, and energy over time. Individual results vary." },
+    "AD": { name: "Oestrogen Dominant + Under-Fuelled", intro: "Based on your answers, your symptoms may reflect both oestrogen imbalance and under-fuelling. This is an important combination — consistent under-fuelling can impair liver detoxification, which may worsen oestrogen clearance over time. Prioritising consistent nourishment alongside oestrogen-supporting foods may be a helpful starting point. This is not a medical diagnosis — please speak with a healthcare professional if you have concerns.", outcome: "Many women who address both patterns report improvements in energy, skin, and period regularity over time. Individual results vary." },
+    "BC": { name: "Cortisol Overloaded + Blood Sugar Unstable", intro: "Based on your answers, your symptoms may be associated with both elevated cortisol and blood sugar instability. These patterns interact closely — cortisol can raise blood sugar, and blood sugar crashes can raise cortisol. Supporting blood sugar stability through consistent, balanced meals may be the most accessible first step. This is not a medical diagnosis — please speak with a healthcare professional if you have concerns.", outcome: "Many women who support both patterns report improvements in energy stability, mood, and reduced cravings over time. Individual results vary." },
+    "BD": { name: "Cortisol Overloaded + Under-Fuelled", intro: "Based on your answers, your symptoms may reflect both elevated cortisol and significant under-fuelling. These two patterns can compound each other significantly over time. Consistent rest and adequate nourishment are foundational priorities here. This is not a medical diagnosis — please speak with a healthcare professional if you have concerns.", outcome: "Many women who prioritise rest and consistent nourishment alongside stress reduction report meaningful improvements in energy and wellbeing over time. Individual results vary." },
+    "CD": { name: "Blood Sugar Unstable + Under-Fuelled", intro: "Based on your answers, your symptoms may be associated with both blood sugar instability and under-fuelling. These often occur together — skipping meals and then eating high-carbohydrate foods when very hungry is a common pattern that drives both. Building consistent, balanced meals is the most important foundation. This is not a medical diagnosis — please speak with a healthcare professional if you have concerns.", outcome: "Many women who establish consistent, balanced eating patterns report improvements in energy stability and reduced cravings over time. Individual results vary." }
   };
 
   // answers stores arrays: { q0: ['confidence','energy'], q1: ['A','C'], ... }
@@ -1038,12 +1038,32 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
     return { type: 'combo', key: top2.join('') };
   }
 
+  function showEmailError(msg) {
+    const field = document.getElementById('emailAddress');
+    let err = document.getElementById('email-error');
+    if (!err) {
+      err = document.createElement('p');
+      err.id = 'email-error';
+      err.style.cssText = 'color:#C4806A;font-size:13px;margin-top:-4px;margin-bottom:8px;text-align:left;';
+      field.parentNode.insertBefore(err, field.nextSibling);
+    }
+    err.textContent = msg;
+    field.style.borderColor = '#C4806A';
+  }
+
+  function clearEmailError() {
+    const err = document.getElementById('email-error');
+    if (err) err.remove();
+    document.getElementById('emailAddress').style.borderColor = '';
+  }
+
   function showResult() {
+    clearEmailError();
     const first = document.getElementById('firstName').value.trim();
     const email = document.getElementById('emailAddress').value.trim();
-    if (!email) { alert('Please enter your email to see your results.'); return; }
+    if (!email) { showEmailError('Please enter your email address to see your results.'); return; }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) { alert('Please enter a valid email address.'); return; }
+    if (!emailRegex.test(email)) { showEmailError('Please enter a valid email address (e.g. name@example.com).'); return; }
 
     fbq('track', 'Lead');
     gtag('event', 'email_submitted');
@@ -1091,12 +1111,12 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       body: payload.toString()
     }).catch(err => console.log('Webhook error:', err));
 
-    const greeting = first ? `${first}, you're ` : "You're ";
+    const greeting = first ? `${first}, your` : 'Your';
 
     const html = `
       <div class="result-header">
-        <div class="result-badge">✦ Your Hormone Profile</div>
-        <h2 class="result-profile-name">${greeting}<em>${profile.name}</em></h2>
+        <div class="result-badge">✦ Your Symptom Profile</div>
+        <h2 class="result-profile-name">${greeting} symptom pattern suggests <em>${profile.name}</em></h2>
         <p class="result-intro">${profile.intro}</p>
       </div>
 
@@ -1108,11 +1128,12 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
       </div>
 
       <div class="result-cta-box">
-        <p class="cta-eyebrow">This is fixable.</p>
-        <h3 class="cta-title">Your <em>Next Step...</em></h3>
-        <p style="font-size:15px; font-weight:300; line-height:1.6; color:var(--text-light); margin-bottom:24px;">This quiz can identify your biggest imbalance. But it can't fix it. Real results come from understanding your full picture, which is exactly what we do on the call together.</p>
-        <p style="font-size:15px; font-weight:300; line-height:1.6; color:var(--text-light); margin-bottom:24px;">I have a limited number of free coaching calls available this week where we can go through your symptoms together and map out exactly what your body needs.</p>
+        <p class="cta-eyebrow">Your next step</p>
+        <h3 class="cta-title">Ready to go <em>deeper?</em></h3>
+        <p style="font-size:15px; font-weight:300; line-height:1.6; color:var(--text-light); margin-bottom:24px;">This quiz identifies symptom patterns that may point toward hormonal imbalances. But understanding your full picture — and what nutritional and lifestyle support may help — is something we can explore properly on a call together.</p>
+        <p style="font-size:15px; font-weight:300; line-height:1.6; color:var(--text-light); margin-bottom:24px;">I have a limited number of free coaching calls available this week where we can go through your symptoms and map out what support may be most relevant for your body.</p>
         <button class="btn-primary" onclick="gtag('event', 'book_call_clicked', { hormone_profile: '${profile.name}' }); window.open('https://cal.com/jenni-mae-ceibpf/hormone-coaching-session-45min', '_blank')">Book Your Free Call →</button>
+        <p style="font-size:13px; font-weight:300; line-height:1.6; color:var(--text-light); margin-top:20px; font-style:italic; opacity:0.7;">This quiz is for educational purposes only and does not constitute a medical diagnosis. Always consult a qualified healthcare professional if you have concerns about your hormonal health.</p>
         <p style="font-size:14px; font-weight:300; line-height:1.6; color:var(--text-light); margin-top:16px;">With love,<br>Jenni Mae 💛</p>
       </div>
     `;
