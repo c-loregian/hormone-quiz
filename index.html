@@ -1141,28 +1141,13 @@ src="https://www.facebook.com/tr?id=1194638015814153&ev=PageView&noscript=1"
 
       <div class="result-cta-box">
         <p class="cta-eyebrow">Your next step</p>
-        <p style="font-size:15px; font-weight:300; line-height:1.6; color:var(--text-light); margin-bottom:20px;">These are the starting points. On a free 30-minute call, we'll go through your specific pattern in more depth, build a starting protocol around your actual schedule, food and budget, and you'll leave with clear next steps, whether or not you go further with us.</p>
-        <div style="width:100%;height:650px;overflow:scroll" id="my-cal-inline-intro-call-with-jenni"></div>
+        <p style="font-size:15px; font-weight:300; line-height:1.6; color:var(--text-light); margin-bottom:24px;">These are the starting points. Premium goes deeper on your specific pattern, guided protocols, plus weekly coaching calls where you can bring your own results and get help applying them. $19/month, cancel anytime.</p>
+        <a href="https://www.skool.com/totally-balanced-7966/plans?src=join" class="btn-primary" style="max-width:320px;">See What's Inside Premium →</a>
       </div>
     `;
 
     document.getElementById('result-content').innerHTML = html;
     showScreen('result');
-
-    // Cal inline embed code begins
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "intro-call-with-jenni", {origin:"https://app.cal.com"});
-    Cal.config = Cal.config || {};
-    Cal.config.forwardQueryParams = true;
-
-    Cal.ns["intro-call-with-jenni"]("inline", {
-      elementOrSelector:"#my-cal-inline-intro-call-with-jenni",
-      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-      calLink: "jenni-mae-ceibpf/intro-call-with-jenni",
-    });
-
-    Cal.ns["intro-call-with-jenni"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-    // Cal inline embed code ends
   }
 </script>
 </body>
